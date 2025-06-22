@@ -1,0 +1,8 @@
+#requirements
+geopandas
+rasterio
+shapely
+matplotlib
+pandas
+numpy
+folium

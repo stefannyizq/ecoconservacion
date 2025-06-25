@@ -1,6 +1,6 @@
 # Priorización de zonas para conservación ecológica en paisajes agrícolas del sur occidente colombiano
 
-Este proyecto tiene como objetivo desarrollar un análisis de aptitud ecológica en paisajes productivos del sur occidente colombiano, específicamente en los departamentos del Cauca y Valle del Cauca. La investigación se enfoca en identificar y priorizar zonas dentro de territorios agrícolas que presentan un alto potencial para la conservación de la biodiversidad y la conectividad ecológica.
+Este proyecto tiene como objetivo desarrollar un análisis de aptitud ecológica en paisajes productivos del sur occidente colombiano, específicamente en el departamento del Valle del Cauca. La investigación se enfoca en identificar y priorizar zonas dentro de territorios agrícolas que presentan un alto potencial para la conservación de la biodiversidad y la conectividad ecológica.
 
 A través de la integración de variables biofísicas, ambientales y de uso del suelo, el proyecto aplica herramientas de análisis espacial en entornos SIG (Sistemas de Información Geográfica) y programación en Python para construir un índice espacial que represente el valor relativo de conservación dentro del paisaje agrícola. Este índice se genera con base en criterios como la cercanía a áreas protegidas, la conectividad con fragmentos de cobertura vegetal natural, la pendiente del terreno, la cobertura boscosa existente, el uso actual del suelo, y la proximidad a fuentes hídricas.
 

@@ -10,7 +10,6 @@ El enfoque metodológico busca apoyar procesos de planificación territorial sos
 
 - Analizar variables ecológicas y productivas del territorio.
 - Generar un índice de prioridad para conservación.
-- Visualizar zonas clave mediante mapas SIG.
 
 # Estructura del repositorio
 

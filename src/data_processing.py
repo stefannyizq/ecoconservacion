@@ -1,30 +1,39 @@
+# src/data_processing.py
+
 import geopandas as gpd
-import pandas as pd
-import os
+from pathlib import Path
 
-def load_vector_data(filepath):
+def load_shapefile(filepath):
     """
-    Carga un archivo vectorial (como .shp o .geojson) y lo devuelve como un GeoDataFrame.
+    Carga un shapefile como GeoDataFrame.
+    Parámetros:
+        filepath (str): Ruta al archivo .shp
+    Retorna:
+        gpd.GeoDataFrame
     """
-    return gpd.read_file(filepath)
+    path = Path(filepath)
+    if not path.exists():
+        raise FileNotFoundError(f"No se encontró el archivo: {filepath}")
+    return gpd.read_file(path)
 
-def clip_layer(layer, boundary):
+def reproject_layer(gdf, epsg_code=3116):
     """
-    Recorta una capa geoespacial según una capa límite (boundary).
+    Reproyecta un GeoDataFrame al sistema CRS especificado.
+    Parámetros:
+        gdf (GeoDataFrame): Capa de entrada
+        epsg_code (int): Código EPSG de destino
+    Retorna:
+        GeoDataFrame reproyectado
     """
-    return gpd.overlay(layer, boundary, how='intersection')
+    return gdf.to_crs(epsg=epsg_code)
 
-def merge_layers(layers):
+def clip_layer(layer, mask):
     """
-    Une múltiples GeoDataFrames en una sola capa.
+    Recorta una capa geográfica usando otra capa como máscara.
+    Parámetros:
+        layer (GeoDataFrame): Capa a recortar
+        mask (GeoDataFrame): Máscara (polígono)
+    Retorna:
+        GeoDataFrame recortado
     """
-    return gpd.GeoDataFrame(pd.concat(layers, ignore_index=True))
-
-def normalize_column(gdf, column):
-    """
-    Normaliza los valores de una columna en un GeoDataFrame entre 0 y 1.
-    """
-    min_val = gdf[column].min()
-    max_val = gdf[column].max()
-    gdf[column + '_norm'] = (gdf[column] - min_val) / (max_val - min_val)
-    return gdf
+    return gpd.clip(layer, mask)

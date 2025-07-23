@@ -17,7 +17,7 @@ El enfoque metodológico busca apoyar procesos de planificación territorial sos
 ### 1. `data_preparation.ipynb`
 Este notebook contiene el preprocesamiento de datos geoespaciales.
 Incluye:
-- Lectura de archivos shapefile (`.shp`) y ráster (`.tif`) con `geopandas` y `rasterio`.
+- Lectura de archivos shapefile (`.shp`) con `geopandas` 
 - Limpieza y validación de geometrías.
 - Unificación y recorte de capas según el área de estudio- Valle del Cauca.
 - Proyecciones y ajustes de coordenadas.
